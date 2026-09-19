@@ -23,3 +23,16 @@ main{width:min(100%,1600px);margin:auto}.hero{position:relative;padding:146px va
 @media(max-width:360px){.site-header{gap:6px;padding-inline:9px}.brand strong{font-size:16px}.brand small{font-size:8px}.hero h1{font-size:36px}.hero-gallery{height:340px}.proof-grid{grid-template-columns:1fr}.booking-copy h2,.final-cta h2{font-size:36px}.trust-strip{padding-inline:10px}.trust-strip>div{padding-inline:5px}}
 @media(max-height:600px) and (max-width:960px){.mobile-nav{padding-top:105px;padding-bottom:22px}.mobile-nav>a:not(.button){font-size:28px;padding-block:6px}.mobile-nav .button{margin-top:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.room-card,.parallax-image,.button,.circle-link,.room-image img,.room-info p{transform:none!important}.hero-gallery{scroll-snap-type:x proximity}}
+/* Faixa "Prévia feita pela Sett" — não faz parte do site final. */
+.sett-faixa{position:fixed;top:0;left:0;right:0;width:100%;max-width:none;box-sizing:border-box;z-index:80;margin:0;padding:9px 16px;background:#0B0C0E;color:#B7BCC4;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:center;letter-spacing:.01em}
+.sett-faixa b{color:#FFFFFF;font-weight:600}
+.sett-faixa a{display:inline-block;vertical-align:middle;line-height:0;margin:0 .25em}
+.sett-faixa img{display:inline-block;height:1.1em;width:auto;margin-top:-.2em;border:0}
+.sett-faixa a:focus-visible{outline:2px solid #12F0F5;outline-offset:3px;border-radius:2px}
+@media(max-width:600px){.sett-faixa{font-size:11.5px;padding:8px 14px}.sett-faixa img{height:1.25em}}
+/* Desloca o cabeçalho fixo e o skip-link para baixo da faixa, sem alterar o layout original. */
+.site-header{top:calc(18px + var(--faixa-h,0px))}
+.skip-link{top:calc(10px + var(--faixa-h,0px))}
+html{scroll-padding-top:calc(110px + var(--faixa-h,0px))}
+.mobile-nav{top:calc(-18px + var(--faixa-h,0px))}
+@media(max-width:620px){.site-header{top:calc(12px + var(--faixa-h,0px))}html{scroll-padding-top:calc(90px + var(--faixa-h,0px))}}
